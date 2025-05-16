@@ -1,0 +1,19 @@
+<div class="admin-edit-container">
+  <h2>Filmek szerkesztése / törlése</h2>
+
+  <div *ngIf="movies$ | async as movies; else loading" class="movie-list">
+    <div *ngFor="let movie of movies" class="movie-card">
+      <div class="movie-title">{{ movie.title }}</div>
+      <div class="movie-actions">
+        <button mat-button color="primary" (click)="movie.id && editMovie(movie.id)">SZERKESZTÉS</button>
+        <button mat-button color="warn" (click)="movie.id && deleteMovie(movie.id)">TÖRLÉS</button>
+      </div>
+    </div>
+  </div>
+
+  <button mat-button color="accent" class="back-button" (click)="goBack()">VISSZA</button>
+
+  <ng-template #loading>
+    <p>Betöltés...</p>
+  </ng-template>
+</div>

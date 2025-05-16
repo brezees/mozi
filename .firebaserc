@@ -1,0 +1,8 @@
+{
+  "projects": {
+    "default": "mozi-web",
+    "mozi-web": "mozi-web"
+  },
+  "targets": {},
+  "etags": {}
+}

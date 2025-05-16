@@ -1,0 +1,114 @@
+.movie-list {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  background-color: #121212;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.movie-card {
+  display: flex;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(229, 57, 53, 0.4);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 30px rgba(229, 57, 53, 0.7);
+  }
+
+  img.poster-img {
+    width: 160px;
+    height: 240px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+  }
+
+  .movie-info {
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+
+    h2 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #e53935; 
+    }
+
+    .genre-list {
+      margin-bottom: 0.5rem;
+    }
+
+    .genre-chip {
+      display: inline-block;
+      background-color: #330000; 
+      border-radius: 16px;
+      padding: 5px 14px;
+      margin-right: 6px;
+      font-size: 0.9rem;
+      color: #e53935;
+      user-select: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .description {
+      margin: 0.8rem 0;
+      color: #bbbbbb;
+      font-size: 1rem;
+      max-height: 4.5em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4;
+    }
+
+    p {
+      margin: 0.3rem 0;
+      font-weight: 500;
+      color: #e0e0e0;
+    }
+
+    button {
+      align-self: flex-start;
+      margin-top: 0.5rem;
+      background-color: #e53935;
+      color: white;
+      font-weight: 600;
+      padding: 8px 22px;
+      font-size: 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #d32f2f;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .movie-card {
+    flex-direction: column;
+    img.poster-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px 12px 0 0;
+    }
+
+    .movie-info {
+      padding: 1rem;
+    }
+  }
+}

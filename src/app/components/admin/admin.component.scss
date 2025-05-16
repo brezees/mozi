@@ -1,0 +1,90 @@
+.admin-card {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 6px 20px rgba(229, 57, 53, 0.4);
+  border-radius: 12px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+  mat-card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #e53935;
+    text-shadow: 0 0 6px #e53935;
+  }
+
+  .movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    mat-form-field {
+      width: 100%;
+
+      mat-label,
+      input,
+      textarea,
+      .mat-mdc-select {
+        color: #bbbbbb !important;
+      }
+    }
+
+    textarea[matInput] {
+      resize: vertical;
+      min-height: 80px;
+    }
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.2rem;
+    margin-top: 2.4rem;
+
+    button {
+      min-width: 120px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      padding: 14px 32px;
+      box-shadow: 0 6px 18px rgba(229, 57, 53, 0.6);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    button[color="primary"]:disabled {
+      background-color: #666 !important;
+      box-shadow: none !important;
+      cursor: default;
+      color: #ccc !important;
+    }
+
+    button[color="primary"]:not(:disabled) {
+      background-color: #e53935;
+      color: white;
+
+      &:hover {
+        background-color: #bf2d2d;
+        box-shadow: 0 10px 30px rgba(229, 57, 53, 0.85);
+      }
+    }
+
+    button[mat-button][color="accent"] {
+      background-color: transparent;
+      color: #e53935;
+      font-weight: 600;
+      box-shadow: none;
+      padding: 14px 32px;
+      min-width: 100px;
+
+      &:hover {
+        background-color: rgba(229, 57, 53, 0.15);
+      }
+    }
+  }
+}

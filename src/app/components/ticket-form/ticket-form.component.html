@@ -1,0 +1,61 @@
+<mat-card *ngIf="loading">
+  <mat-card-content>
+    Betöltés...
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="!loading && errorMessage">
+  <mat-card-content>
+    {{ errorMessage }}
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="!loading && selectedMovie && !showSuccess" class="ticket-card">
+  <mat-card-title>Jegyvásárlás: {{ selectedMovie.title }}</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="ticket-form">
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Név</mat-label>
+        <input matInput formControlName="name" required>
+        <mat-error *ngIf="form.get('name')?.invalid && form.get('name')?.touched">Kérjük, adja meg a nevét!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" required type="email">
+        <mat-error *ngIf="form.get('email')?.invalid && form.get('email')?.touched">Érvényes email cím szükséges!</mat-error>
+      </mat-form-field>
+
+      <div formGroupName="tickets" class="tickets-group">
+        <div *ngFor="let type of ticketTypes" class="ticket-row">
+          <label>{{ type.label }} ({{ type.price }} Ft):</label>
+          <input type="number" min="0" [formControlName]="type.value" />
+        </div>
+      </div>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Fizetés módja</mat-label>
+        <mat-select formControlName="paymentMethod">
+          <mat-option value="local">Helyben (készpénz/kártya)</mat-option>
+          <mat-option value="online">Online fizetés</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="total-price">
+        <strong>Összesen: {{ getTotalPrice() }} Ft</strong>
+      </div>
+
+      <div class="form-actions">
+        <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Vásárlás</button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="showSuccess" class="success-card">
+  <mat-card-content>
+    <h2>Siker!</h2>
+    <p>{{ successMessage }}</p>
+  </mat-card-content>
+</mat-card>

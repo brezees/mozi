@@ -1,0 +1,25 @@
+<div class="movie-list">
+  <ng-container *ngIf="movies$ | async as movies; else loading">
+    <div class="movie-card" *ngFor="let movie of movies" (click)="onSelect(movie)">
+      <img *ngIf="movie.posterUrl" [src]="movie.posterUrl" [alt]="movie.title + ' poszter'" class="poster-img" />
+
+      <div class="movie-info">
+        <h2>{{ movie.title }}</h2>
+
+        <div class="genre-list" *ngIf="movie.genre?.length">
+          <span *ngFor="let g of movie.genre" class="genre-chip">{{ g | genreName }}</span>
+        </div>
+
+        <p *ngIf="movie.duration != null">Hossz: {{ movie.duration }} perc</p>
+        <p class="releasedate">Megjelenés: {{ movie.releaseDate }}</p>
+        <p class="description">{{ movie.description }}</p>
+
+        <button mat-raised-button color="primary">Jegyvásárlás</button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #loading>
+    <p>Filmek betöltése...</p>
+  </ng-template>
+</div>

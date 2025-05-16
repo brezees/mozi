@@ -1,0 +1,50 @@
+<mat-card class="admin-card">
+  <mat-card-header>
+    <mat-card-title>Új film hozzáadása</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <form [formGroup]="movieForm" (ngSubmit)="addMovie()" class="movie-form">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Cím</mat-label>
+        <input matInput formControlName="title" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Leírás</mat-label>
+        <textarea matInput formControlName="description" rows="4"></textarea>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Megjelenés dátuma</mat-label>
+        <input matInput type="date" formControlName="releaseDate" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Hossz (perc)</mat-label>
+        <input matInput type="number" formControlName="duration" min="1" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Poszter URL</mat-label>
+        <input matInput formControlName="posterUrl" />
+      </mat-form-field>
+
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Műfajok</mat-label>
+        <mat-select formControlName="genre" multiple>
+          <mat-option *ngFor="let genre of genreOptions" [value]="genre.key">
+            {{ genre.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div class="button-row">
+        <button mat-button color="accent" type="button" (click)="goBack()">Vissza</button>
+        <button mat-raised-button color="primary" type="submit" [disabled]="movieForm.invalid">
+          Mentés
+        </button>
+      </div>
+    </form>
+  </mat-card-content>
+</mat-card>

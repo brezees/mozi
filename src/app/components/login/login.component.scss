@@ -1,0 +1,108 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+mat-card {
+  width: 400px;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  background-color: #2a2a2a;
+  box-shadow: 0 6px 20px rgba(229, 57, 53, 0.4);
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+mat-card-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+
+  mat-card-title {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #e53935; 
+    text-shadow: 0 0 6px #e53935;
+  }
+}
+
+mat-card-content {
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  mat-form-field {
+    width: 100%;
+
+    .mat-form-field-label,
+    input,
+    textarea,
+    .mat-mdc-select {
+      color: #bbbbbb !important;
+      font-weight: 600;
+    }
+
+    .mat-input-element {
+      color: white !important;
+    }
+
+    .mat-form-field-ripple {
+      background-color: #e53935 !important;
+    }
+
+    .mat-form-field-underline {
+      background-color: #e53935 !important;
+    }
+
+    input {
+      background-color: #3a3a3a; 
+      border: 1px solid #e53935;
+      border-radius: 8px;
+      padding: 0.5rem 0.75rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+      &::placeholder {
+        color: #888888;
+      }
+
+      &:focus {
+        border-color: #ff6f61;
+        box-shadow: 0 0 6px #e53935;
+        outline: none;
+        background-color: #4a4a4a;
+      }
+    }
+  }
+
+  button {
+    margin-top: 1rem;
+    min-width: 120px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    padding: 14px 32px;
+    box-shadow: 0 6px 18px rgba(229, 57, 53, 0.6);
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    border: none;
+    background-color: #e53935;
+    color: white;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      background-color: #bf2d2d;
+      box-shadow: 0 10px 30px rgba(229, 57, 53, 0.85);
+    }
+
+    &:disabled {
+      background-color: #666;
+      box-shadow: none;
+      cursor: default;
+      color: #ccc;
+    }
+  }
+}

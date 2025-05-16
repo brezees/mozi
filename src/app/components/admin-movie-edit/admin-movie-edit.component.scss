@@ -1,0 +1,86 @@
+.admin-card {
+  max-width: 600px;
+  margin: 3rem auto;
+  padding: 2.5rem 3rem;
+  background-color: #2f2f2f; 
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(229, 57, 53, 0.45);
+  font-family: 'Roboto', sans-serif;
+  color: #ddd;
+
+  h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #e53935;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 0 8px #e53935;
+  }
+
+  .movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    mat-form-field {
+      width: 100%;
+
+      mat-label,
+      input,
+      textarea,
+      .mat-mdc-select {
+        color: #ccc !important;
+      }
+
+      input, textarea, .mat-mdc-select {
+        background-color: #444;
+        border-radius: 8px;
+      }
+    }
+
+    textarea[matInput] {
+      resize: vertical;
+      min-height: 100px;
+      padding: 0.5rem;
+    }
+  }
+
+  .button-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.4rem;
+    margin-top: 2.4rem;
+
+    button {
+      min-width: 130px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      padding: 14px 32px;
+      box-shadow: 0 6px 18px rgba(229, 57, 53, 0.6);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    button[color="primary"] {
+      background-color: #e53935;
+      color: white;
+
+      &:hover {
+        background-color: #bf2d2d;
+        box-shadow: 0 10px 30px rgba(229, 57, 53, 0.85);
+      }
+    }
+
+    button[mat-button] {
+      background-color: transparent;
+      color: #e53935;
+
+      &:hover {
+        background-color: rgba(229, 57, 53, 0.15);
+      }
+    }
+  }
+}

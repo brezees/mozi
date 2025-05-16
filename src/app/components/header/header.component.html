@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <mat-icon *ngIf="isMobile" (click)="toggleMenu()" class="menu-icon">menu</mat-icon>
+
+  <span class="webmozi-logo">Mozijegy</span>
+
+  <div class="menu-items" *ngIf="!isMobile">
+    <button mat-button [routerLink]="['/']">FŐOLDAL</button>
+    <button mat-button [routerLink]="['/contact']">KAPCSOLAT</button>
+    <button mat-button [routerLink]="['/login']">BEJELENTKEZÉS</button>
+  </div>
+
+  <div *ngIf="menuOpen && isMobile" class="mobile-menu">
+    <button mat-button [routerLink]="['/']">FŐOLDAL</button>
+    <button mat-button [routerLink]="['/contact']">KAPCSOLAT</button>
+    <button mat-button [routerLink]="['/login']">BEJELENTKEZÉS</button>
+  </div>
+</mat-toolbar>
+

@@ -1,0 +1,66 @@
+mat-card.contact-card {
+  margin: 2rem auto;
+  padding: 2.5rem 3rem;
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(255, 0, 0, 0.35);
+  background: linear-gradient(145deg, #2a0000, #4d0000);
+  color: #f7d0d0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: box-shadow 0.3s ease;
+  text-align: center;  
+}
+
+mat-card.contact-card:hover {
+  box-shadow: 0 8px 25px rgba(255, 0, 0, 0.6);
+}
+
+.title {
+  font-size: 2.4rem;
+  color: #ff4444;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  text-shadow: 0 0 6px #ff4c4c;
+}
+
+.intro {
+  font-size: 1.15rem;
+  margin-bottom: 2rem;
+  color: #f7bbbb;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;  
+  max-width: 300px;    
+}
+
+.contact-list li {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  color: #ff9999;
+  font-weight: 600;
+  cursor: default;
+  transition: color 0.3s ease;
+  justify-content: center;  
+  gap: 0.6rem;              
+
+.contact-list li:hover {
+  color: #ff4c4c;
+}
+
+.contact-list mat-icon {
+  color: #ff4c4c;
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 1px #ff0000);
+}}
